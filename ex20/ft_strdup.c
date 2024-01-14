@@ -6,7 +6,7 @@
 /*   By: namra <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 20:59:40 by namra             #+#    #+#             */
-/*   Updated: 2024/01/14 18:30:54 by anikoyan         ###   ########.fr       */
+/*   Updated: 2024/01/14 18:55:15 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,14 @@ int	ft_strlen(char *str)
 	return (len);
 }
 
-char	*ft_strcpy(char *src, char *dest)
+char	*ft_strcpy(char *src)
 {
+	char	*dest;
+
+	dest = NULL;
+	dest = (char *)malloc(sizeof(char) * ft_strlen(src));
+	if (!str)
+		return (NULL);
 	while (*src)
 	{
 		*dest = *src;
@@ -39,11 +45,5 @@ char	*ft_strcpy(char *src, char *dest)
 
 char	*ft_strdup(char *src)
 {
-	char	*str;
-
-	str = NULL;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (!str)
-		return (NULL);
-	return (ft_strcpy(src, str));
+	return (ft_strcpy(src));
 }

@@ -6,7 +6,7 @@
 /*   By: namra <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 22:50:14 by namra             #+#    #+#             */
-/*   Updated: 2024/01/14 18:28:57 by anikoyan         ###   ########.fr       */
+/*   Updated: 2024/01/14 18:56:50 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,6 @@ void	display_file(char *filename, char *buffer)
 		bytes_read = read(fd, buffer, BUFF_SIZE);
 		if (bytes_read <= 0)
 			break ;
-		else if (bytes_read == -1)
-		{
-			close(fd);
-			return ;
-		}
 		buffer[bytes_read] = '\0';
 		ft_putstr(buffer);
 	}
