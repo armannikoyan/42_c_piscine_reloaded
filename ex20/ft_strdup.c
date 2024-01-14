@@ -6,7 +6,7 @@
 /*   By: namra <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 20:59:40 by namra             #+#    #+#             */
-/*   Updated: 2024/01/14 19:34:32 by anikoyan         ###   ########.fr       */
+/*   Updated: 2024/01/14 19:50:25 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ unsigned int	ft_strlen(char *str)
 
 	i = 0;
 	while (str[i])
-		++i;
+		i++;
 	return (i);
 }
 
@@ -30,7 +30,7 @@ char	*ft_strcpy(char *src, char *dest)
 	while (src[i])
 	{
 		dest[i] = src[i];
-		++i;
+		i++;
 	}
 	dest[i] = '\0';
 	return (dest);
@@ -41,7 +41,7 @@ char	*ft_createstr(char *src, unsigned int i)
 	char	*str;
 
 	str = (char *)malloc(sizeof(char) * i);
-	if (!dest)
+	if (!str)
 		return (NULL);
 	return (ft_strcpy(src, str));
 }

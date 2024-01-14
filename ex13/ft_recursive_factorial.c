@@ -6,13 +6,13 @@
 /*   By: namra <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 18:48:10 by namra             #+#    #+#             */
-/*   Updated: 2024/01/12 19:08:01 by namra            ###   ########.fr       */
+/*   Updated: 2024/01/14 19:39:27 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_recursive_factorial(int nb)
 {
-	if (nb < 0)
+	if (nb < 0 || nb > 12)
 		return (0);
 	if (nb == 0 || nb == 1)
 		return (1);
