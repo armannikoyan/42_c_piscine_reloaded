@@ -6,7 +6,7 @@
 /*   By: namra <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 22:50:14 by namra             #+#    #+#             */
-/*   Updated: 2024/01/13 12:56:52 by namra            ###   ########.fr       */
+/*   Updated: 2024/01/14 18:23:44 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	ft_putstr(char *str)
 	}
 }
 
+#include <stdio.h>
+
 void	display_file(char *filename, char *buffer)
 {
 	int	fd;
@@ -35,14 +37,19 @@ void	display_file(char *filename, char *buffer)
 		ft_putstr("Cannot read file.\n");
 		return ;
 	}
-	bytes_read = read(fd, buffer, BUFF_SIZE);
-	if (bytes_read == -1)
+	while(1)
 	{
-		close(fd);
-		return ;
+		bytes_read = read(fd, buffer, BUFF_SIZE);
+		if (bytes_read <= 0)
+			break ;
+		else if (bytes_read == -1)
+		{
+			close(fd);
+			return ;
+		}
+		buffer[bytes_read] = '\0';
+		ft_putstr(buffer);
 	}
-	buffer[bytes_read] = '\0';
-	ft_putstr(buffer);
 	close(fd);
 }
 
