@@ -6,44 +6,42 @@
 /*   By: namra <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 20:59:40 by namra             #+#    #+#             */
-/*   Updated: 2024/01/14 18:55:15 by anikoyan         ###   ########.fr       */
+/*   Updated: 2024/01/14 19:25:21 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+unsigned int	ft_strlen(char *str)
 {
-	int	len;
+	unsigned int	i;
 
-	len = 0;
-	while (*str)
-	{
-		++len;
-		++str;
-	}
-	return (len);
+	i = 0;
+	while (str[i])
+		++i;
+	return (i);
 }
 
-char	*ft_strcpy(char *src)
+char	*ft_strcpy(char *src, char *dest)
 {
-	char	*dest;
+	unsigned int	i;
 
-	dest = NULL;
-	dest = (char *)malloc(sizeof(char) * ft_strlen(src));
-	if (!str)
-		return (NULL);
-	while (*src)
+	i = 0;
+	while (src[i])
 	{
-		*dest = *src;
-		++src;
-		++dest;
+		dest[i] = src[i];
+		++i;
 	}
-	*dest = '\0';
+	dest[i] = '\0';
 	return (dest);
 }
 
 char	*ft_strdup(char *src)
 {
-	return (ft_strcpy(src));
+	char	*str;
+
+	str = (char *)malloc(sizeof(char) * ft_strlen(src));
+	if (!dest)
+		return (NULL);
+	return (ft_strcpy(src, str));
 }
