@@ -6,7 +6,7 @@
 /*   By: namra <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 20:59:40 by namra             #+#    #+#             */
-/*   Updated: 2024/01/14 18:07:17 by anikoyan         ###   ########.fr       */
+/*   Updated: 2024/01/14 18:30:54 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strdup(char *src)
 	char	*str;
 
 	str = NULL;
-	str = (char *)malloc(sizeof(char) * ft_strlen(src));
+	str = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
 	if (!str)
 		return (NULL);
 	return (ft_strcpy(src, str));
