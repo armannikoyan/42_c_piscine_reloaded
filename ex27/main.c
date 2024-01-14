@@ -6,7 +6,7 @@
 /*   By: namra <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 22:50:14 by namra             #+#    #+#             */
-/*   Updated: 2024/01/14 19:19:04 by anikoyan         ###   ########.fr       */
+/*   Updated: 2024/01/14 19:30:19 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ void	ft_putstr(char *str)
 	}
 }
 
-void	display_file(char *filename)
+void	display_file(char *filename, char **dest)
 {
 	int	fd;
-	char	buffer[BUFF_SIZE];
 	int	bytes_read;
 
 	fd = open(filename, O_RDONLY);
@@ -48,6 +47,8 @@ void	display_file(char *filename)
 
 int	main(int argc, char **argv)
 {
+	char	buffer[BUFF_SIZE];
+
 	if (argc == 1)
 	{
 		ft_putstr("File name missing.\n");
@@ -58,6 +59,6 @@ int	main(int argc, char **argv)
 		ft_putstr("Too many arguments.\n");
 		return (1);
 	}
-	display_file(argv[1]);
+	display_file(argv[1], &dest[0]);
 	return (0);
 }
