@@ -6,7 +6,7 @@
 /*   By: namra <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 22:50:14 by namra             #+#    #+#             */
-/*   Updated: 2024/01/14 19:30:19 by anikoyan         ###   ########.fr       */
+/*   Updated: 2024/01/14 19:57:49 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putstr(char *str)
 	}
 }
 
-void	display_file(char *filename, char **dest)
+void	display_file(char *filename, char *buffer)
 {
 	int	fd;
 	int	bytes_read;
@@ -59,6 +59,6 @@ int	main(int argc, char **argv)
 		ft_putstr("Too many arguments.\n");
 		return (1);
 	}
-	display_file(argv[1], &dest[0]);
+	display_file(argv[1], &buffer[0]);
 	return (0);
 }
