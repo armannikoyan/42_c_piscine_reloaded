@@ -1,5 +1,7 @@
 # 42 C Piscine Reloaded
 
+Project to review the basics learned in Piscine C!
+
 <hr>
 
 ## Score - 100%
